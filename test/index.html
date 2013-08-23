@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Snitch test</title>
+  <script type="text/javascript" src="/lib/event_emitter.js"></script>
+  <script type="text/javascript" src="/lib/string_ext.js"></script>
+
+  <script type="text/javascript" src="/src/snitch.js"></script>
+  <script type="text/javascript" src="/src/snitch/assertion.js"></script>
+  <script type="text/javascript" src="/src/snitch/assertion_describer.js"></script>
+  <script type="text/javascript" src="/src/snitch/assertors.js"></script>
+  <script type="text/javascript" src="/src/snitch/presenter.js"></script>
+  <script type="text/javascript" src="/src/snitch/suite_runner.js"></script>
+  <script type="text/javascript" src="/src/snitch/test_case_runner.js"></script>
+  <script type="text/javascript" src="/src/snitch/test_case.js"></script>
+
+  <script type="text/javascript" src="/test/cases/test_case_test.js"></script>
+  <script type="text/javascript" src="/test/fixtures/dummy_test_case.js"></script>
+
+  <script type="text/javascript">
+  window.addEventListener('load', function() {
+    var element = document.querySelector('body > .results');
+    var testCaseClasses = [TestCaseTest];
+    Snitch.run(element, testCaseClasses);
+  });
+  </script>
+
+  <link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+
+<body></body>
+
+<div class="results"></div>
+
+</html>
