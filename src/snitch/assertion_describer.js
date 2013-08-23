@@ -11,5 +11,11 @@ Snitch.AssertionDescriber = {
   },
   describeTruthyRefutation: function(assertion) {
     return assertion.arguments[0] + " was truthy.";
+  },
+  describeTrueConfirmation: function(assertion) {
+    return assertion.arguments[0] + " was not true.";
+  },
+  describeTrueRefutation: function(assertion) {
+    return assertion.arguments[0] + " was true.";
   }
 };
