@@ -18,3 +18,12 @@ AssertorsTest.prototype['test truthy'] = function() {
   this.refuteTrue(Snitch.Assertors.truthy(false));
   this.refuteTrue(Snitch.Assertors.truthy(0));
 };
+
+AssertorsTest.prototype['test equal'] = function() {
+  this.confirmTrue(Snitch.Assertors.equal("rasmus", "rasmus"));
+  this.confirmTrue(Snitch.Assertors.equal(true, true));
+  this.refuteTrue(Snitch.Assertors.equal(2, "2"));
+  this.refuteTrue(Snitch.Assertors.equal(2, 3));
+  this.refuteTrue(Snitch.Assertors.equal("true", true));
+  this.refuteTrue(Snitch.Assertors.equal("yeah", "no"));
+};

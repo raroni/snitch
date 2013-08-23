@@ -5,7 +5,7 @@ Snitch.Assertors = {
   true: function(value) {
     return value === true;
   },
-  inDelta: function() {
-    throw new Error('Not implemented yet!');
+  equal: function(a, b) {
+    return a === b;
   }
 };
