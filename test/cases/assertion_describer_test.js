@@ -30,13 +30,25 @@ AssertionDescriberTest.prototype['test true refutation'] = function() {
 };
 
 AssertionDescriberTest.prototype['test equal confirmation'] = function() {
-  var expected = "'Rasmus' did not equal 'Christina'.";
+  var expected = "'Christina' did not equal 'Rasmus'.";
   var actual = Snitch.AssertionDescriber.describeEqualConfirmation(['Rasmus', 'Christina']);
   this.confirmEqual(expected, actual);
 };
 
 AssertionDescriberTest.prototype['test equal refutation'] = function() {
-  var expected = "'Rasmus' did equal 'Christina'.";
+  var expected = "'Christina' did equal 'Rasmus'.";
   var actual = Snitch.AssertionDescriber.describeEqualRefutation(['Rasmus', 'Christina']);
+  this.confirmEqual(expected, actual);
+};
+
+AssertionDescriberTest.prototype['test in delta confirmation'] = function() {
+  var expected = "23 was not within 25±0.5.";
+  var actual = Snitch.AssertionDescriber.describeInDeltaConfirmation([25, 23, 0.5]);
+  this.confirmEqual(expected, actual);
+};
+
+AssertionDescriberTest.prototype['test in delta refutation'] = function() {
+  var expected = "24.6 was within 25±0.5.";
+  var actual = Snitch.AssertionDescriber.describeInDeltaRefutation([25, 24.6, 0.5]);
   this.confirmEqual(expected, actual);
 };

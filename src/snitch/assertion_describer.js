@@ -19,9 +19,15 @@ Snitch.AssertionDescriber = {
     return "'" + args[0] + "' was true.";
   },
   describeEqualConfirmation: function(args) {
-    return "'" + args[0] + "' did not equal '" + args[1] + "'.";
+    return "'" + args[1] + "' did not equal '" + args[0] + "'.";
   },
   describeEqualRefutation: function(args) {
-    return "'" + args[0] + "' did equal '" + args[1] + "'.";
+    return "'" + args[1] + "' did equal '" + args[0] + "'.";
+  },
+  describeInDeltaConfirmation: function(args) {
+    return args[1] + ' was not within ' + args[0] + '±' + args[2] + '.';
+  },
+  describeInDeltaRefutation: function(args) {
+    return args[1] + ' was within ' + args[0] + '±' + args[2] + '.';
   }
 };

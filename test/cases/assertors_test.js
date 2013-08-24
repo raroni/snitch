@@ -27,3 +27,11 @@ AssertorsTest.prototype['test equal'] = function() {
   this.refuteTrue(Snitch.Assertors.equal("true", true));
   this.refuteTrue(Snitch.Assertors.equal("yeah", "no"));
 };
+
+AssertorsTest.prototype['test in delta'] = function() {
+  this.confirmTrue(Snitch.Assertors.inDelta(25, 25, 0.1));
+  this.confirmTrue(Snitch.Assertors.inDelta(24.9, 25, 0.5));
+  this.confirmTrue(Snitch.Assertors.inDelta(24.9, 25, 0.1));
+  this.refuteTrue(Snitch.Assertors.inDelta(24, 25, 0.1));
+  this.refuteTrue(Snitch.Assertors.inDelta(30, 25, 2));
+};
